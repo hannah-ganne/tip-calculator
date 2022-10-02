@@ -40,6 +40,10 @@ section {
   justify-content: center;
 }
 
+.input-container {
+  position: relative;
+}
+
 [data-panel-title] {
   display: flex;
   align-items: center;
@@ -63,14 +67,17 @@ input {
   background-color: var(--very-light-gray-cyan);
   padding: 0.7em 0.8em;
   border-radius: 0.2em;
-  color: var(--very-dark-cyan);
   text-align: right;
-  /* outline-color: var(--primary);  */
+  color: var(--very-dark-cyan);
   font-size: 0.8em;
 }
 
-input.error {
-  color: red;
+input::placeholder {
+  color: var(--gray-cyan)
+}
+
+input:focus::placeholder {
+  color: transparent;
 }
 
 input.custom {
