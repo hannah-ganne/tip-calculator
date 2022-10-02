@@ -3,14 +3,17 @@ import Section from './components/Section'
 import TipBtn from './components/TipBtn';
 import Amount from './components/Amount'
 import Input from './components/Input'
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import PersonIcon from '@mui/icons-material/Person';
 import { useState, useEffect } from 'react'
 
 function App() {
-  const [bill, setBill] = useState(0)
+  const [bill, setBill] = useState(null)
   const [percentage, setPercentage] = useState(0)
   const [customPercentage, setCustomPercentage] = useState('Custom');
-  const [numPeople, setNumPeople] = useState(0)
+  const [numPeople, setNumPeople] = useState(null)
   const [disabled, setDisabled] = useState(true)
+  const [activeIndex, setActiveIndex] = useState(-1)
 
   const percentArr = [
     { percent: 5 },
@@ -19,11 +22,22 @@ function App() {
     { percent: 25 },
     { percent: 50 }
   ]
-  const [activeIndex, setActiveIndex] = useState(-1)
+
+  const attributes = {
+    color: "disabled",
+    fontSize: "small",
+    sx: {
+        position: 'absolute',
+        top: 19,
+        left: 10
+    }
+}
 
   useEffect(() => {
     if (bill !== 0 && percentage !== 0 && numPeople !== 0) {
-      setDisabled(false)
+      if (bill !== null && numPeople !== null) {
+        setDisabled(false)
+      }
     } else {
       setDisabled(true)
     }
@@ -42,7 +56,8 @@ function App() {
             title="Bill"
             bill={bill}
             setBill={setBill}
-            numPeople={numPeople} 
+            numPeople={numPeople}
+            icon={<AttachMoneyIcon {...attributes} />}
           />
           <div data-panel>
             <h3 data-panel-title>Select Tip %</h3>
@@ -74,21 +89,9 @@ function App() {
             title="Number of People"
             bill={bill}
             numPeople={numPeople}
-            setNumPeople={setNumPeople} 
+            setNumPeople={setNumPeople}
+            icon={<PersonIcon {...attributes} />}
           />
-          {/* <div data-panel>
-            <div data-panel-title>
-              <h3>Number of People</h3>
-              <small>Can't be zero</small>
-            </div>
-            <input
-              type="number"
-              className={error? 'error' : ''}
-              placeholder={0}
-              onChange={event => setNumPeople(event.target.value)}
-              value={numPeople} 
-            />
-          </div> */}
         </Section>
         <Section color="green">
           <Amount title="Tip Amount" amount={bill*(percentage/100)/numPeople} />
