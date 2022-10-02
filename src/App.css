@@ -1,0 +1,94 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--white);
+  width: 70vw;
+  padding: 1.5em;
+  border-radius: 0.8em;
+}
+
+section {
+  width: 50%;
+  padding: 1.5em;
+  border-radius: 0.7em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+[data-panel] {
+  margin-bottom: 1em;
+}
+
+.flex:nth-of-type(2) {
+  margin-bottom: auto;
+}
+
+[data-panel]:nth-of-type(3) {
+  margin-bottom: 0;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+[data-panel].flex > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.amount {
+  font-size: 2.5em;
+  color: var(--primary)
+}
+
+input {
+  width: 100%;
+  border: none;
+  background-color: var(--very-light-gray-cyan);
+  padding: 0.7em;
+  border-radius: 0.2em;
+  color: var(--dark-gray-cyan);
+  text-align: right;
+}
+
+.tip-btn {
+  outline: none;
+  border: none;
+  border-radius: 0.2em;
+  background-color: var(--very-dark-cyan);
+  color: white;
+  width: 100%;
+  padding: 0.5em;
+  font-size: 0.8em;
+  font-family: 'Space Mono';
+}
+
+.btn-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0.7em;
+  grid-row-gap: 0.7em;
+}
+
+.reset-btn {
+  width: 100%;
+  padding: 0.4em;
+  font-size: 0.7em;
+  border: none;
+  border-radius: 0.3em;
+  outline: none;
+  background-color: #0d686d;
+  color: var(--very-dark-cyan);
+  justify-self: flex-end;
+}
+
+.person {
+  font-size: 0.6em;
+  font-weight: 700;
+  color: var(--gray-cyan);
+}
