@@ -1,8 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --primary: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-gray-cyan: hsl(186, 14%, 43%);
+  --gray-cyan: hsl(184, 14%, 56%);
+  --light-gray-cyan: hsl(185, 41%, 84%);
+  --very-light-gray-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  font-family: 'Space Mono', sans-serif;
+  font-weight: 700;
+}
+
+
 body {
+  width: 100vw;
+  height: 100vh;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-size: 24px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--light-gray-cyan);
+  color: var(--dark-gray-cyan);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  line-height: 1.2em;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 2em;
+}
+
+h3 {
+  font-size: 0.7em;
+  margin: 0;
+  margin-bottom: 0.3em;
+}
+
+button {
+  cursor: pointer;
 }
