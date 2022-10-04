@@ -1,4 +1,4 @@
-export default function Input({ title, bill, setBill, numPeople, setNumPeople, icon }) {
+export default function Input({ title, bill, setBill, numPeople, setNumPeople, icon, autoFocus = false }) {
 
     return (
         <div data-panel>
@@ -9,6 +9,7 @@ export default function Input({ title, bill, setBill, numPeople, setNumPeople, i
             <div className="input-container">
                 {icon}
                 <input
+                    autoFocus={autoFocus}
                     type="number"
                     placeholder={0}
                     onChange={event => {
@@ -19,9 +20,9 @@ export default function Input({ title, bill, setBill, numPeople, setNumPeople, i
                         }
                     }}
                     onFocus={(event) => event.target.value = ''}
-                    value={title === 'Bill' ? bill : numPeople} 
+                    value={title === 'Bill' ? bill : numPeople}
                 />
-            </div>    
+            </div>
         </div>
     )
 }
