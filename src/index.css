@@ -20,6 +20,11 @@ html {
   font-weight: 700;
 }
 
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
 
 body {
   width: 100vw;

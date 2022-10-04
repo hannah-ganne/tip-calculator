@@ -145,3 +145,41 @@ input.custom {
   font-weight: 700;
   color: var(--gray-cyan);
 }
+
+@media screen and (min-width: 375px) {
+
+  .container {
+    width: 100vw;
+    margin-top: auto;
+    flex-direction: column;
+  }
+
+  h1 {
+    margin: 2em 0;
+  }
+
+  section {
+    width: 100%;
+    padding: 0;
+  }
+
+  section:nth-of-type(2) {
+    padding: 1em;
+    margin-top: 1em;
+  }
+
+  .btn-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0.5em;
+    grid-row-gap: 0.5em;
+  }
+
+  .amount {
+    font-size: 1.5em;
+  }
+
+  .reset-btn {
+    margin-top: 1em;
+  }
+}
