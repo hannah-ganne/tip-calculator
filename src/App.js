@@ -44,6 +44,20 @@ function App() {
   }, [bill, percentage, numPeople])
 
   useEffect(() => {
+    if (bill < 0) {
+      setBill(0)
+    }
+
+    if (percentage < 0) {
+      setPercentage(0)
+    }
+
+    if (numPeople < 0) {
+      setNumPeople(0)
+    }
+  }, [bill, percentage, numPeople])
+
+  useEffect(() => {
     setActiveIndex(-1)
   }, [customPercentage])
 
@@ -58,6 +72,8 @@ function App() {
             setBill={setBill}
             numPeople={numPeople}
             icon={<AttachMoneyIcon {...attributes} />}
+            autoFocus={true}
+            disabled={disabled}
           />
           <div data-panel>
             <h3 data-panel-title>Select Tip %</h3>
@@ -95,7 +111,7 @@ function App() {
         </Section>
         <Section color="green">
           <Amount title="Tip Amount" amount={bill*(percentage/100)/numPeople} />
-          <Amount title="Total" amount={bill*(1+(percentage/100))/numPeople} />
+          <Amount title="Total" amount={bill * (1 + (percentage / 100)) / numPeople} />
           <button
             className={disabled ? 'reset-btn disabled' : 'reset-btn'}
             onClick={() => {
